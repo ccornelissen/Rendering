@@ -108,8 +108,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalLibraryDirectories>C:\Users\Cody\Documents\Personal Projects\Rendering\Libraries\glfw\lib-vc2015;C:\Users\Cody\Documents\Personal Projects\Rendering\Libraries\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\ExternalLibraries\SOIL2\lib;C:\Users\Cody\Documents\Personal Projects\Rendering\Libraries\glfw\lib-vc2015;C:\Users\Cody\Documents\Personal Projects\Rendering\Libraries\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;soil2-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,6 +146,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SOIL2\etc1_utils.c" />
+    <ClCompile Include="SOIL2\image_DXT.c" />
+    <ClCompile Include="SOIL2\image_helper.c" />
+    <ClCompile Include="SOIL2\SOIL2.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Core.frag" />
@@ -153,6 +157,23 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="SOIL2\etc1_utils.h" />
+    <ClInclude Include="SOIL2\image_DXT.h" />
+    <ClInclude Include="SOIL2\image_helper.h" />
+    <ClInclude Include="SOIL2\jo_jpeg.h" />
+    <ClInclude Include="SOIL2\pkm_helper.h" />
+    <ClInclude Include="SOIL2\pvr_helper.h" />
+    <ClInclude Include="SOIL2\SOIL2.h" />
+    <ClInclude Include="SOIL2\stbi_DDS.h" />
+    <ClInclude Include="SOIL2\stbi_DDS_c.h" />
+    <ClInclude Include="SOIL2\stbi_ext.h" />
+    <ClInclude Include="SOIL2\stbi_ext_c.h" />
+    <ClInclude Include="SOIL2\stbi_pkm.h" />
+    <ClInclude Include="SOIL2\stbi_pkm_c.h" />
+    <ClInclude Include="SOIL2\stbi_pvr.h" />
+    <ClInclude Include="SOIL2\stbi_pvr_c.h" />
+    <ClInclude Include="SOIL2\stb_image.h" />
+    <ClInclude Include="SOIL2\stb_image_write.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
