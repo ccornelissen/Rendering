@@ -11,6 +11,11 @@
 //SOIL
 #include "SOIL2/SOIL2.h"
 
+//GLM
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 //Local
 #include "Shader.h"
 
@@ -142,6 +147,15 @@ int main()
 
 		//Access the shader program and render it to the screen
 		ourShader.Use();
+
+		//Create transform
+		glm::mat4 transform;
+		transform = glm::translate(transform, glm::vec3(0.0f, 0.0f, 0.0f));
+		transform = glm::rotate(transform, (GLfloat)glfwGetTime() * 2.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+
+		//Apply transform
+		GLint transformlocation = glGetUniformLocation(ourShader.Program, "transform");
+		glUniformMatrix4fv(transformlocation, 1, GL_FALSE, glm::value_ptr(transform));
 
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture);
